@@ -1,0 +1,14 @@
+[
+    {
+        "id": "1",
+        "name": "Maschine 1",
+        "description": "Beschreibung 1",
+        "constructionSite": "Baustelle 1"
+    },
+    {
+        "id": "2",
+        "name": "Maschine 2",
+        "description": "Beschreibung 2",
+        "constructionSite": "Baustelle 2"
+    }
+]
