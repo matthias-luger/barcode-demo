@@ -59,7 +59,7 @@ function Detail() {
                         <p className="text-gray-700 mb-2">
                             <strong>Beschreibung:</strong> {device.description}
                         </p>
-                        <hr className="w-full mt-10 mb-2 border-y-2" />
+                        <hr className="w-full mt-5 mb-2 border-y-2" />
                         <p className="text-gray-700 mb-2">
                             <strong>Unterschrift:</strong>
                         </p>
