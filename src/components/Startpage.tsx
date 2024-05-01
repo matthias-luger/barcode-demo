@@ -3,7 +3,6 @@ import ArrowForward from '@mui/icons-material/ArrowForwardIos'
 import { Link, useNavigate } from 'react-router-dom'
 import { Device } from '../types/device'
 import { useEffect, useState } from 'react'
-import { API_PORT } from '../main'
 
 function Startpage() {
     const navigate = useNavigate()
@@ -25,7 +24,6 @@ function Startpage() {
 
     async function loadDevices() {
         const url = new URL(`${window.location.origin}/devices`)
-        url.port = API_PORT
 
         const response = await fetch(url)
         const data = await response.json()
