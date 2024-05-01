@@ -12,7 +12,7 @@ function Startpage() {
     useEffect(() => {
         loadDevices()
 
-        let callback = (event: CustomEvent) => {
+        const callback = (event: CustomEvent) => {
             navigate(`/details/${event.detail}`)
         }
 
@@ -24,7 +24,7 @@ function Startpage() {
     }, [])
 
     async function loadDevices() {
-        let url = new URL(`${window.location.origin}/devices`)
+        const url = new URL(`${window.location.origin}/devices`)
         url.port = API_PORT
 
         const response = await fetch(url)
@@ -35,7 +35,7 @@ function Startpage() {
 
     function openBarcodeScanner() {
         if ((window as any)['CoflScanQr'] !== undefined) {
-            ;(window as any)['CoflScanQr'].postMessage('scan')
+            void (window as any)['CoflScanQr'].postMessage('scan')
         }
     }
 

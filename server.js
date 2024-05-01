@@ -7,6 +7,8 @@ const port = 3000
 
 app.use(express.json())
 
+app.use(express.static('dist'))
+
 app.use(cors())
 
 app.get('/devices', (req, res) => {

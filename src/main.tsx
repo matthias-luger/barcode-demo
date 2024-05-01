@@ -2,13 +2,13 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Startpage from './components/Startpage'
 import './index.css'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { RouterProvider, createHashRouter } from 'react-router-dom'
 import Detail from './components/Details'
 import PageNotFound from './components/PageNotFound'
 
 export const API_PORT = '3000'
 
-const router = createBrowserRouter([
+const router = createHashRouter([
     {
         path: '/',
         element: <Startpage />

@@ -14,15 +14,15 @@ function Detail() {
     }, [id])
 
     async function loadDevice() {
-        let url = new URL(`${window.location.origin}/devices/${id}`)
+        const url = new URL(`${window.location.origin}/devices/${id}`)
         url.port = API_PORT
 
-        let res = await fetch(url)
+        const res = await fetch(url)
         setDevice(await res.json())
     }
 
     function onDeleteHistory(uuid: string) {
-        let url = new URL(`${window.location.origin}/devices/${id}/history/${uuid}`)
+        const url = new URL(`${window.location.origin}/devices/${id}/history/${uuid}`)
         url.port = API_PORT
 
         fetch(url, {
