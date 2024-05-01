@@ -1,6 +1,7 @@
 import { AddCircle } from '@mui/icons-material'
 import { CSSProperties, ChangeEvent, useState } from 'react'
 import { HistoryEntry } from '../types/device'
+import { API_PORT } from '../main'
 
 interface Props {
     deviceId: string
@@ -19,6 +20,9 @@ export default function AddHistoryModal(props: Props) {
 
     function onSave() {
         const url = new URL(`${window.location.origin}/devices/${encodeURIComponent(props.deviceId)}/history`)
+        if (API_PORT) {
+            url.port = API_PORT
+        }
 
         fetch(url, {
             method: 'POST',

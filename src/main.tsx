@@ -6,6 +6,8 @@ import { RouterProvider, createHashRouter } from 'react-router-dom'
 import Detail from './components/Details'
 import PageNotFound from './components/PageNotFound'
 
+export const API_PORT = import.meta.env.DEV ? '3000' : null
+
 const router = createHashRouter([
     {
         path: '/',

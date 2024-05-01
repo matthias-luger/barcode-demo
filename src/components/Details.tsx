@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { Device } from '../types/device'
 import { ArrowBack, Delete } from '@mui/icons-material'
 import AddHistoryModal from './AddHistoryModal'
+import { API_PORT } from '../main'
 
 function Detail() {
     const { id } = useParams()
@@ -14,6 +15,9 @@ function Detail() {
 
     async function loadDevice() {
         const url = new URL(`${window.location.origin}/devices/${id}`)
+        if (API_PORT) {
+            url.port = API_PORT
+        }
 
         const res = await fetch(url)
         setDevice(await res.json())
@@ -21,6 +25,9 @@ function Detail() {
 
     function onDeleteHistory(uuid: string) {
         const url = new URL(`${window.location.origin}/devices/${id}/history/${uuid}`)
+        if (API_PORT) {
+            url.port = API_PORT
+        }
 
         fetch(url, {
             method: 'DELETE'
